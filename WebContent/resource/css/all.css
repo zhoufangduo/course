@@ -1,0 +1,220 @@
+@CHARSET "UTF-8";
+body{
+	font-family: Courier New,"微软雅黑";
+}
+
+input{
+	font-family: Courier New,"微软雅黑";
+}
+
+.body-container{
+	margin-top: 54px;
+}
+
+.col-sm-4 .card{
+	-webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.col-sm-4 .card img{
+	width:100%;
+	
+}
+
+.col-sm-4 .card:hover{
+  margin-top: -6px;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1),0 1px 2px -1px rgba(0,0,0,0.1),0 6px 5px 0 rgba(0,0,0,0.1);
+  -moz-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1),0 1px 2px -1px rgba(0,0,0,0.1),0 6px 5px 0 rgba(0,0,0,0.1);
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1),0 1px 2px -1px rgba(0,0,0,0.1),0 6px 5px 0 rgba(0,0,0,0.1);
+  background-color: #fff;
+
+}
+
+.bg-faded{
+	background-color: #f1f1f1;
+}
+
+.text-line {
+  position: relative;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.text-line h4>span {
+  background: #fff;
+  padding: 0 40px;
+}
+
+.text-line .line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #f1f1f1;
+  margin-top: -1px;
+  z-index: -1;
+}
+
+.img-responsive{
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin-bottom: 30px;
+ 	margin: 0 auto 30px auto;
+}
+
+.item{
+	padding: 50px;
+	margin: auto;
+	text-align: center;
+}
+.img-circle{
+	border-radius: 50%;
+  	width: 128px !important;
+  	height: 128px !important;
+}
+
+
+.teacher-item {
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+	text-align: center;
+	border-radius: 2px;
+	-webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1),0 1px 2px -1px rgba(0,0,0,0.1),0 1px 5px 0 rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1),0 1px 2px -1px rgba(0,0,0,0.1),0 1px 5px 0 rgba(0,0,0,0.1);
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1),0 1px 2px -1px rgba(0,0,0,0.1),0 1px 5px 0 rgba(0,0,0,0.1);
+}
+
+.teacher-item img{
+	margin-top: 20px;
+}
+
+
+.teacher-item:hover{
+	margin-top:-3px;
+	text-align: center;
+	-webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1),0 1px 2px -1px rgba(0,0,0,0.1),0 1px 5px 0 rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1),0 1px 2px -1px rgba(0,0,0,0.1),0 1px 5px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1),0 1px 2px 2px rgba(0,0,0,0.1),0 6px 5px 0 rgba(0,0,0,0.1);
+}
+
+.footer-link{
+	background: #2e2e2e;
+ 	padding: 55px 0px;
+  	border-bottom: 1px solid #111;
+  	width: 100%;
+  	margin: auto;
+}
+
+.footer-item{
+	width: 20%;
+	
+}
+.footer-link .container .row .col-md-2 h5{
+	color: #eee; 
+}
+
+.footer-link .container .row .col-md-2 ul{
+	list-style: none;
+	margin-left: -20px;
+}
+
+.footer-link .container .row .col-md-2 ul li a{
+  color: #b1b1b1;
+  margin-left: -19px;
+}
+
+.footer-link .container .row .col-md-3 ul li a:hover {
+  color: #008ed8;
+  text-decoration: none;
+}
+
+.copyright {
+	background: #212121;
+	border-top: 1px solid #444;
+	text-align: center;
+	padding: 20px 0;
+	line-height: 30px;
+	color: #b1b1b1;
+	text-shadow: 0 1px 3px #000;
+	font-size: 14px;
+}
+.name{
+	font-weight: bold;
+}
+
+.job{
+	color: #C1C1C1;
+	margin: 10px 10px;
+}
+
+.ins{
+	font-size: 14px;
+	color: #C1C1C1;
+}
+
+.navbar-form .form-control{
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+.navbar-form .form-control:FOCUS{
+	width: 300px;
+}
+
+.footer-link .container .row .col-md-2 ul li a:hover{
+	color: #0090da;
+	text-decoration:none;
+}
+
+.head{
+	width: 30px;
+	height: 30px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.nav-user{
+	margin-left:50px;
+	margin-right: 40px;
+}
+
+.message{
+	color: #FFFFFF;
+}
+.message:hover{
+	text-decoration: none;
+	color: rgba(255,255,255,.75);
+}
+.logo{
+	height:30px;
+	width:100px;
+}
+
+.social-icon{
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	background: url(../images/social-icons.png) 0 0 no-repeat;
+	vertical-align: middle;
+}
+
+.social-icon-weixin {
+	background-position: 0 -160px;
+}
+
+.social-icon-renren{
+	background-position: 0 -80px;
+}
+
+.social-icon-qq{
+	background-position: 0 -40px;
+}
+ 
