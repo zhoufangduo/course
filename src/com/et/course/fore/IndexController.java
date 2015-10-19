@@ -1,4 +1,4 @@
-package com.et.course.fore.login;
+package com.et.course.fore;
 
 import com.et.course.plugin.annotation.Controller;
 import com.et.course.plugin.support.BasicController;

@@ -1,6 +1,12 @@
 package com.et.course.fore.login;
 
-public class LoginUser {
+import com.jfinal.plugin.activerecord.Model;
+
+public class LoginUser extends Model<LoginUser>{
+	
+	private static final long serialVersionUID = 1L;
+
+	public final static LoginUser dao = new LoginUser();
 
 	private String username;
 

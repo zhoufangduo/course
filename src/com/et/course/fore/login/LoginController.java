@@ -12,5 +12,6 @@ public class LoginController extends BasicController{
 	
 	public void login(){
 		
+		
 	}
 }
