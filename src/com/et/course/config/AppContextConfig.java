@@ -1,5 +1,6 @@
 package com.et.course.config;
 
+import com.et.course.fore.login.LoginUser;
 import com.et.course.plugin.ConfigRoutePlugin;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
@@ -47,14 +48,11 @@ public class AppContextConfig extends JFinalConfig{
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(c3p0Plugin);
 		me.add(arp);
 		
-		//arp.addMapping("blog", Blog.class);	// 映射blog 表到 Blog模型
+		arp.addMapping("user", LoginUser.class);	// 映射blog 表到 Blog模型
 	}
 
 	@Override
 	public void configRoute(Routes me) {
-		
-		/*me.add("/", IndexController.class);
-		me.add("/login", LoginController.class,JSP_ROOT + "/login");*/
 		
 		ConfigRoutePlugin plugin = new ConfigRoutePlugin(me);
 		plugin.initRoute("com.et.course");

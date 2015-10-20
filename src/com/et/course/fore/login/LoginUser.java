@@ -6,8 +6,6 @@ public class LoginUser extends Model<LoginUser>{
 	
 	private static final long serialVersionUID = 1L;
 
-	public final static LoginUser dao = new LoginUser();
-
 	private String username;
 
 	private String password;
