@@ -5,25 +5,13 @@ import com.jfinal.plugin.activerecord.Model;
 public class LoginUser extends Model<LoginUser>{
 	
 	private static final long serialVersionUID = 1L;
-
-	private String username;
-
-	private String password;
-
-	public String getUsername() {
-		return username;
+	
+	public static LoginUser me = new LoginUser();
+	
+	public LoginUser getLogin(Object[]param){
+		
+		me = findFirst("SELECT * FROM USER WHERE USERNAME=? AND PASSWORD=MD5(?)",param);
+		
+		return this;
 	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 }

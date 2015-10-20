@@ -33,7 +33,7 @@ public class BasicController extends Controller {
 		for(int i = 0 ; i < param.length ; i ++){
 			params[i] = getPara(param[i]);
 			buffer.append(param[i]).append(":").append(params[i]);
-			if (i < param.length) {
+			if (i < param.length-1) {
 				buffer.append(",");
 			}
 		}
