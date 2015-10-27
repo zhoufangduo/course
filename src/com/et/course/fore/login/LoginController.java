@@ -16,16 +16,30 @@ public class LoginController extends BasicController {
 		
 		LoginUser user  = LoginUser.me.getLogin(getParams("username", "password"));
 		
+		setCookie();
+		
 		if (user != null) {
 			this.setSessionAttr("user", user);
+			render("../index.jsp");
+		}else{
+			redirect("/login/toLogin?error=true");
 		}
-		
+	}
+
+	private void setCookie() {
 		if ("true".equals(getPara("remeber"))) {
 			Cookie userCookie = new Cookie("username", getPara("username"));
 			setCookie(userCookie);
 			
 			Cookie passCookie = new Cookie("password", getPara("password"));
 			setCookie(passCookie);
+			
+			Cookie remeberCookie = new Cookie("remeber","true");
+			setCookie(remeberCookie);
+		}else{
+			removeCookie("username");
+			removeCookie("password");
+			removeCookie("remeber");
 		}
 	}
 }

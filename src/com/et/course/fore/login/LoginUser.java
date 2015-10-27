@@ -9,9 +9,6 @@ public class LoginUser extends Model<LoginUser>{
 	public static LoginUser me = new LoginUser();
 	
 	public LoginUser getLogin(Object[]param){
-		
-		me = findFirst("SELECT * FROM USER WHERE USERNAME=? AND PASSWORD=MD5(?)",param);
-		
-		return this;
+		return findFirst("SELECT * FROM USER WHERE USERNAME=? AND PASSWORD=MD5(?)",param);
 	}
 }

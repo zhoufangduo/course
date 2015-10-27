@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 <% String basePath = request.getContextPath();%>
 <%@ taglib prefix="course" uri="/WEB-INF/menu.tld"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -32,21 +33,56 @@
 			font-weight: bold;
 		}
 	</style>
+	<script type="text/javascript">
+	
+	$(function(){
+		
+		var allcookies = document.cookie;    
+		  
+		function getCookie(cookie_name){  
+			var allcookies = document.cookie;  
+			var cookie_pos = allcookies.indexOf(cookie_name);
+			if (cookie_pos != -1){  
+				cookie_pos += cookie_name.length + 1;
+				var cookie_end = allcookies.indexOf(";", cookie_pos);  
+				if (cookie_end == -1){  
+					cookie_end = allcookies.length;  
+				}  
+				var value = unescape(allcookies.substring(cookie_pos, cookie_end));
+			}  
+			return value;  
+		}  
+		
+		$("#username").val(getCookie('username'));
+		$("#password").val(getCookie('password'));
+		$("#remeber").attr("checked",getCookie('remeber'));
+		
+	});
+	
+	
+	</script>
 </head>
 <body>
 	<div>
 	    <course:menu/>
 	</div>
+	
 	<div class="body-container">
-			<center>
-				<div class="login_card">
-					<div class="card">
-					  <div class="card-header">
+		<center>
+			<div class="login_card">
+				<div class="card">
+					 <div class="card-header">
 					   	 用户登录
 					  </div>
 					  <div class="card-block">
 					  	 <br/>
 					   	 <form action="<%=basePath%>/login/login" method="post">
+					   	 	<c:if test="${param.error == true}">
+						   	 	<div class="alert alert-danger" role="alert">
+								  	<i class="fa fa-warning"></i>&nbsp;账号或者密码错误!
+								</div>
+								<br/>
+							</c:if>
 					   	 	<div class="form-group row">
 							    <label for="username" class="col-sm-2 form-control-label">账号</label>
 							    <div class="col-sm-10">
@@ -66,7 +102,7 @@
 							    <div class="col-sm-offset-2">
 							     	<div class="col-xs-3" style="margin-top: 6px;">
 			    					  <label class="c-input c-checkbox">
-										  <input type="checkbox" value="true" name="remeber">
+										  <input type="checkbox" value="true" name="remeber" id="remeber">
 										  <span class="c-indicator"></span>
 										     记住密码
 								 	 </label>
