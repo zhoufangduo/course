@@ -1,5 +1,6 @@
 package com.et.course.config;
 
+
 import com.et.course.fore.login.LoginUser;
 import com.et.course.plugin.ConfigRoutePlugin;
 import com.jfinal.config.Constants;
