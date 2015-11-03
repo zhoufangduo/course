@@ -8,6 +8,7 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.BodyTagSupport;
 
 import com.et.course.constant.CONSTANT;
+import com.et.course.fore.login.LoginUser;
 
 public class MenuTagSupport extends BodyTagSupport {
 
@@ -26,7 +27,7 @@ public class MenuTagSupport extends BodyTagSupport {
 		init();
 		
 		HttpSession session = this.pageContext.getSession();
-		Object user = session.getAttribute(CONSTANT.USER);
+		LoginUser user = (LoginUser)session.getAttribute(CONSTANT.USER);
 		
 		if(user == null){
 			buffer.append("<span style='margin-left: 70px;'>");
@@ -38,13 +39,18 @@ public class MenuTagSupport extends BodyTagSupport {
 			buffer.append("<img class='head' src='").append(contextPath).append("/resource/images/head.png'></a>");
 			
 			buffer.append("<div class='dropdown-menu' style='margin-top:11px;margin-left:-55px;font-size: 13px;'>");
-			buffer.append("<span class='dropdown-header'>").append("zhoufangduo").append("</span>");
+			buffer.append("<span class='dropdown-header'>").append(user.getStr("NAME")).append("</span>");
 			buffer.append("<div class='dropdown-divider'></div>");
-			
+			if (user.get("ROLE", "STUDENT").equals("ADMIN")) {
+				buffer.append("<a class='dropdown-item' href='#'><span class='fa fa-cog'></span>&nbsp;后台管理  </a>");
+				buffer.append("<div class='dropdown-divider'></div>");
+				
+			}
+			buffer.append("<a class='dropdown-item' href='#'><span class='fa fa-cloud'></span>&nbsp;我的课程  </a>");
 			buffer.append("<a class='dropdown-item' href='#'><span class='fa fa-user'></span>&nbsp;个人主页  </a>");
 			buffer.append("<a class='dropdown-item' href='#'><span class='fa fa-cog'></span>&nbsp;个人设置</a>");
-			buffer.append("<a class='dropdown-item' href='#'><span class='fa fa-circle-o-notch'>")
-			.append("</span>&nbsp;退出登录  </a></div></div></span>");
+			buffer.append("<a class='dropdown-item' href='").append(contextPath).
+			append("/login/logout'><span class='fa fa-circle-o-notch'>").append("</span>&nbsp;退出登录  </a></div></div></span>");
 			
 			buffer.append("<a class='message' href='#'><span class='fa fa-bell fa-lg'>")
 				  .append("</span>&nbsp;消息 </a>");

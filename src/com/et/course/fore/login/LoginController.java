@@ -2,6 +2,7 @@ package com.et.course.fore.login;
 
 import javax.servlet.http.Cookie;
 
+import com.et.course.constant.CONSTANT;
 import com.et.course.plugin.annotation.Controller;
 import com.et.course.plugin.support.BasicController;
 
@@ -19,7 +20,7 @@ public class LoginController extends BasicController {
 		setCookie();
 		
 		if (user != null) {
-			this.setSessionAttr("user", user);
+			this.setSessionAttr(CONSTANT.USER, user);
 			render("../index.jsp");
 		}else{
 			redirect("/login/toLogin?error=true");
@@ -41,5 +42,10 @@ public class LoginController extends BasicController {
 			removeCookie("password");
 			removeCookie("remeber");
 		}
+	}
+	
+	public void logout(){
+		this.removeSessionAttr(CONSTANT.USER);
+		redirect("/");
 	}
 }

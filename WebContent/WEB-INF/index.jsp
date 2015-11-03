@@ -14,6 +14,22 @@
 	<link rel="stylesheet" href="<%=basePath%>/resource/css/all.css">
 	<script src="<%=basePath%>/resource/jquery/jquery.min.js"></script>
 	<script src="<%=basePath%>/resource/bootstrap/js/bootstrap.min.js"></script>
+	<style>
+		
+		.nav-pills .nav-item{
+			margin-right: 30px;
+		}
+	
+		.nav-pills .nav-item:HOVER{
+			background-color: #f1f1f1;
+			border-radius: .25rem;
+		}
+		
+		.card-img-top{
+			width: 257px;
+		}
+	
+	</style>
 </head>
 <body>
 	<div>
@@ -28,7 +44,7 @@
 		  </div>
 		</div>
 		<p/><br/>
-		<div class="container" style="background-color: #f7f7f9;border-radius: .25rem;padding: 0px;">
+		<div class="container" style="padding: 0px;">
 	   	    <ul class="nav nav-pills">
 			  <li class="nav-item">
 			    <a href="#div1" class="nav-link active" role="tab" data-toggle="tab">全部</a>
@@ -44,9 +60,48 @@
 		<p><br/>
 		<div class="container">
 			<div class="tab-content">
-			  <div role="tabpanel" class="tab-pane active" id="div1">1</div>
-			  <div role="tabpanel" class="tab-pane" id="div2">2</div>
-			  <div role="tabpanel" class="tab-pane" id="div3">3</div>
+			  <div role="tabpanel" class="tab-pane active" id="div1">
+			  		<div class="row">
+		 				<div class="col-sm-3">
+							<div class="card">
+							  <img class="card-img-top" src="<%=basePath%>/resource/images/card.jpg">
+							  <div class="card-block">
+							    <p class="card-text">html</p>
+							  </div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="card">
+							  <img class="card-img-top" src="<%=basePath%>/resource/images/card.jpg">
+							  <div class="card-block">
+							    <p class="card-text">javaScript</p>
+							  </div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="card">
+							  <img class="card-img-top" src="<%=basePath%>/resource/images/card.jpg">
+							  <div class="card-block">
+							    <p class="card-text">java基本</p>
+							  </div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="card">
+							  <img class="card-img-top" src="<%=basePath%>/resource/images/card.jpg">
+							  <div class="card-block">
+							    <p class="card-text">java基本</p>
+							  </div>
+							</div>
+						</div>
+					</div>
+			  </div>
+			  <div role="tabpanel" class="tab-pane" id="div2">
+			  		
+			  </div>
+			  <div role="tabpanel" class="tab-pane" id="div3">
+			  	   
+			  </div>
 		    </div>
 		</div>
 	</div>
