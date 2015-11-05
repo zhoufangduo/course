@@ -46,7 +46,7 @@ public class MenuTagSupport extends BodyTagSupport {
 				buffer.append("<div class='dropdown-divider'></div>");
 				
 			}
-			buffer.append("<a class='dropdown-item' href='#'><span class='fa fa-cloud'></span>&nbsp;我的课程  </a>");
+			buffer.append("<a class='dropdown-item' href='").append(contextPath).append("/mycourse/index'><span class='fa fa-cloud'></span>&nbsp;我的课程  </a>");
 			buffer.append("<a class='dropdown-item' href='#'><span class='fa fa-user'></span>&nbsp;个人主页  </a>");
 			buffer.append("<a class='dropdown-item' href='#'><span class='fa fa-cog'></span>&nbsp;个人设置</a>");
 			buffer.append("<a class='dropdown-item' href='").append(contextPath).

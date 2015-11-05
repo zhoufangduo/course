@@ -66,7 +66,7 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="card">
-					  <img class="card-img-top" src="<%=basePath%>/resource/images/card.jpg">
+					  <img class="card-img-top" src="<%=basePath%>/resource/images/card2.jpg">
 					  <div class="card-block">
 					    <p class="card-text">javaScript</p>
 					  </div>
@@ -74,7 +74,7 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="card">
-					  <img class="card-img-top" src="<%=basePath%>/resource/images/card.jpg">
+					  <img class="card-img-top" src="<%=basePath%>/resource/images/card3.jpg">
 					  <div class="card-block">
 					    <p class="card-text">java基本</p>
 					  </div>
@@ -93,7 +93,7 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="card">
-					  <img class="card-img-top" src="<%=basePath%>/resource/images/card.jpg">
+					  <img class="card-img-top" src="<%=basePath%>/resource/images/card2.jpg">
 					  <div class="card-block">
 					    <p class="card-text">XML</p>
 					  </div>
@@ -101,7 +101,7 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="card">
-					  <img class="card-img-top" src="<%=basePath%>/resource/images/card.jpg">
+					  <img class="card-img-top" src="<%=basePath%>/resource/images/card3.jpg">
 					  <div class="card-block">
 					    <p class="card-text">反射</p>
 					  </div>
@@ -120,7 +120,7 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="card">
-					  <img class="card-img-top" src="<%=basePath%>/resource/images/card.jpg">
+					  <img class="card-img-top" src="<%=basePath%>/resource/images/card2.jpg">
 					  <div class="card-block">
 					    <p class="card-text">XML</p>
 					  </div>
@@ -128,7 +128,7 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="card">
-					  <img class="card-img-top" src="<%=basePath%>/resource/images/card.jpg">
+					  <img class="card-img-top" src="<%=basePath%>/resource/images/card3.jpg">
 					  <div class="card-block">
 					    <p class="card-text">反射</p>
 					  </div>
@@ -144,6 +144,9 @@
 			<p/><br/>
 		</div>
 		<div class="row" style="background-color: #46c37b;margin: auto;">
+			<div class="container">
+			
+			
             <div class="col-sm-4 item">
 	          <img class="img-responsive" src="<%=basePath%>/resource/images/icon_introduction_1.png">
 	          <h6>网校功能强大</h6>
@@ -158,6 +161,7 @@
 	          <img class="img-responsive" src="<%=basePath%>/resource/images/icon_introduction_3.png">
 	          <h6>教育云服务支持</h6>
 	          <h6>强力教育云支持，免除你的后顾之忧</h6>
+	        </div>
 	        </div>
 	    </div> 
 	    <br/>
