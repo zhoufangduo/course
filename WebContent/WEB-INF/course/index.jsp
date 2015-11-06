@@ -34,8 +34,17 @@
 		
 		.tab-pane{
 			min-height: 807px;
+			
+		}
+		
+		.col-sm-3{
+		 	padding-left:0px;
+		 	padding-right: 30px;
+		 	margin-bottom: 10px;
+		 	margin-top: 10px;
 		}
 	
+		
 	</style>
 	<script type="text/javascript">
 		$(function(){
@@ -179,7 +188,7 @@
 							</div>
 						</div>
 					</div>
-					<p/><br/>
+					<p/>
 					<center>
 						<nav>
 						  <ul class="pagination">

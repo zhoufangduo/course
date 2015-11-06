@@ -181,15 +181,15 @@ input{
 }
 
 .navbar-form .form-control{
-	-webkit-transition: all .3s ease;
-	-moz-transition: all .3s ease;
-	-o-transition: all .3s ease;
-	transition: all .3s ease;
+	width: 200px;
+	transition: width 0.3s;
 }
 
 .navbar-form .form-control:FOCUS{
-	width: 300px;
+	width: 350px;
+	transition: width 0.3s;
 }
+
 
 .footer-link .container .row .col-md-2 ul li a:hover{
 	color: #0090da;
