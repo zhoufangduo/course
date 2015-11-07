@@ -1,8 +1,9 @@
 package com.et.course.config;
 
 
-import com.et.course.fore.login.LoginUser;
+import com.et.course.plugin.BeanMappingUtil;
 import com.et.course.plugin.ConfigRoutePlugin;
+import com.et.course.util.PathUtils;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
 import com.jfinal.config.Interceptors;
@@ -49,7 +50,12 @@ public class AppContextConfig extends JFinalConfig{
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(c3p0Plugin);
 		me.add(arp);
 		
-		arp.addMapping("user", LoginUser.class);	// 映射blog 表到 Blog模型
+		initBeanMapping(arp);
+	}
+
+	private void initBeanMapping(ActiveRecordPlugin plugin) {
+		String resource = PathUtils.getPath("bean-mapping.properties");
+		BeanMappingUtil.loadToPlugin(resource, plugin);
 	}
 
 	@Override

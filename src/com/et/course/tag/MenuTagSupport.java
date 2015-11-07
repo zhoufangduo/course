@@ -42,7 +42,8 @@ public class MenuTagSupport extends BodyTagSupport {
 			buffer.append("<span class='dropdown-header'>").append(user.getStr("NAME")).append("</span>");
 			buffer.append("<div class='dropdown-divider'></div>");
 			if (user.get("ROLE", "STUDENT").equals("ADMIN")) {
-				buffer.append("<a class='dropdown-item' href='#'><span class='fa fa-cog'></span>&nbsp;后台管理  </a>");
+				buffer.append("<a class='dropdown-item' href='").append(contextPath)
+				.append("/admin'><span class='fa fa-cog'></span>&nbsp;后台管理  </a>");
 				buffer.append("<div class='dropdown-divider'></div>");
 				
 			}

@@ -186,7 +186,7 @@ input{
 }
 
 .navbar-form .form-control:FOCUS{
-	width: 350px;
+	width: 300px;
 	transition: width 0.3s;
 }
 
