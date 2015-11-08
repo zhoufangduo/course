@@ -61,7 +61,7 @@
 				</div>
 				<div class="col-sm-7">
 					<div class="card">
-						<div class="card-header">班级课程总数</div>
+						<div class="card-header">课程使用情况</div>
 						<div class="card-block">
 							<table class="table">
 								<thead>
