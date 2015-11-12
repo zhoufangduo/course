@@ -1,6 +1,7 @@
 package com.et.course.config;
 
 import com.et.course.plugin.ConfigRoutePlugin;
+import com.et.course.plugin.mybatis.MyBatiesPlugin;
 import com.et.course.util.PathUtils;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
@@ -33,9 +34,8 @@ public class AppContextConfig extends JFinalConfig {
 
 	@Override
 	public void configPlugin(Plugins me) {
-
 		String filePath = PathUtils.getPath("mybatis-config.xml");
-		
+		me.add(new MyBatiesPlugin(filePath));
 	}
 
 	@Override

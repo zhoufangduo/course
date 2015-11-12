@@ -12,9 +12,8 @@ public class MyBatiesPlugin implements IPlugin {
 
 	private String filePath;
 
-	private SqlSessionFactory sessionFactory;
-
 	public MyBatiesPlugin(String filePath) {
+		System.out.println("MyBatiesPlugin.MyBatiesPlugin()");
 		this.filePath = filePath;
 	}
 
@@ -25,9 +24,11 @@ public class MyBatiesPlugin implements IPlugin {
 		try {
 
 			inputStream = new FileInputStream(filePath);
-			this.sessionFactory = new SqlSessionFactoryBuilder()
+			SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder()
 					.build(inputStream);
-
+			
+			MyBatisSessionFactory.initSession(sessionFactory);
+			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
