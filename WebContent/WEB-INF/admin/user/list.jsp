@@ -56,9 +56,12 @@
 				<thead>
 					<tr>
 						<th>序号</th>
-						<th>班级</th>
-						<th>用户名</th>
 						<th>姓名</th>
+						<th>用户名</th>
+						<th>班级</th>
+						<th>EMAIL</th>
+						<th>联系电话</th>
+						<th>创建时间</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -67,9 +70,39 @@
 						<td>1401</td>
 						<td>Otto</td>
 						<td>@mdo</td>
+						<td>Otto</td>
+						<td>@mdo</td>
+						<td>@mdo</td>
 					</tr>
 				</tbody>
 			</table>
+			<center>
+				<nav>
+				  <ul class="pagination">
+				    <li>
+				      <a href="#" aria-label="Previous">
+				        <span aria-hidden="true">上一页</span>
+				        <span class="sr-only">Previous</span>
+				      </a>
+				    </li>
+				    <li class="active">
+				      <a href="#">1 <span class="sr-only">(current)</span></a>
+				    </li>
+				    <li><a href="#">2</a></li>
+				    <li><a href="#">3</a></li>
+				    <li class="disabled"><a>...</a></li>
+				    <li><a href="#">10</a></li>
+				    <li><a href="#">11</a></li>
+				    <li><a href="#">12</a></li>
+				    <li>
+				      <a href="#" aria-label="Next">
+				        <span aria-hidden="true">下一页</span>
+				        <span class="sr-only">Next</span>
+				      </a>
+				    </li>
+				  </ul>
+				</nav>
+			</center>
 		</div>
 	</div>
 </body>
