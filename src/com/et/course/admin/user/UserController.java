@@ -7,7 +7,12 @@ import com.et.course.plugin.support.BasicController;
 public class UserController extends BasicController {
 
 	public void index() {
+		setAttr("users", User.me.selectList("User.getUsers", getParams()));
 		render("list.jsp");
-
+	}
+	
+	public void add(){
+		User.me.insert("User.add", getParams());
+		redirect("index");
 	}
 }

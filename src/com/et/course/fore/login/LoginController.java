@@ -2,6 +2,7 @@ package com.et.course.fore.login;
 
 import javax.servlet.http.Cookie;
 
+import com.et.course.admin.user.User;
 import com.et.course.constant.CONSTANT;
 import com.et.course.plugin.annotation.Controller;
 import com.et.course.plugin.support.BasicController;
@@ -15,7 +16,7 @@ public class LoginController extends BasicController {
 
 	public void login() {
 		
-		LoginUser user  = LoginUser.me.getLogin(getParams("username", "password"));
+		User user  = LoginUser.me.selectOne("Login.getLoginUser", getParams());
 		
 		setCookie();
 		

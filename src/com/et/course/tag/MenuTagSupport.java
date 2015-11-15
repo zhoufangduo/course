@@ -7,8 +7,8 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.BodyTagSupport;
 
+import com.et.course.admin.user.User;
 import com.et.course.constant.CONSTANT;
-import com.et.course.fore.login.LoginUser;
 
 public class MenuTagSupport extends BodyTagSupport {
 
@@ -27,7 +27,7 @@ public class MenuTagSupport extends BodyTagSupport {
 		init();
 		
 		HttpSession session = this.pageContext.getSession();
-		LoginUser user = (LoginUser)session.getAttribute(CONSTANT.USER);
+		User user = (User)session.getAttribute(CONSTANT.USER);
 		
 		if(user == null){
 			buffer.append("<span style='margin-left: 70px;'>");
@@ -39,9 +39,9 @@ public class MenuTagSupport extends BodyTagSupport {
 			buffer.append("<img class='head' src='").append(contextPath).append("/resource/images/head.png'></a>");
 			
 			buffer.append("<div class='dropdown-menu' style='margin-top:11px;margin-left:-55px;font-size: 13px;'>");
-			buffer.append("<span class='dropdown-header'>").append(user.getStr("NAME")).append("</span>");
+			buffer.append("<span class='dropdown-header'>").append(user.getName()).append("</span>");
 			buffer.append("<div class='dropdown-divider'></div>");
-			if (user.get("ROLE", "STUDENT").equals("ADMIN")) {
+			if ("ADMIN".equals(user.getRole())) {
 				buffer.append("<a class='dropdown-item' href='").append(contextPath)
 				.append("/admin'><span class='fa fa-cog'></span>&nbsp;后台管理  </a>");
 				buffer.append("<div class='dropdown-divider'></div>");

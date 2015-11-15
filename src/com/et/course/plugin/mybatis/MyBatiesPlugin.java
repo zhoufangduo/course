@@ -18,11 +18,9 @@ public class MyBatiesPlugin implements IPlugin {
 
 	public MyBatiesPlugin(String filePath, String jdbc) {
 		init(filePath, jdbc);
-
 	}
 
 	private void init(String filePath, String jdbc) {
-
 		try {
 			this.inputStream = new FileInputStream(filePath);
 			this.properties = new Properties();
@@ -36,11 +34,8 @@ public class MyBatiesPlugin implements IPlugin {
 
 	@Override
 	public boolean start() {
-
-		SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(inputStream, properties);
-		
-		MyBatisSessionFactory.initSession(sessionFactory);
-
+		SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(inputStream,"development", properties);
+		SqlSessionStaticFactory.initSession(sessionFactory);
 		return true;
 	}
 

@@ -1,6 +1,5 @@
 package com.et.course.config;
 
-import com.et.course.config.interceptor.ActionInterceptor;
 import com.et.course.plugin.ConfigRoutePlugin;
 import com.et.course.plugin.mybatis.MyBatiesPlugin;
 import com.et.course.util.PathUtils;
@@ -16,8 +15,6 @@ public class AppContextConfig extends JFinalConfig {
 
 	@Override
 	public void configConstant(Constants me) {
-
-		// 加载少量必要配置，随后可用PropKit.get(...)获取值
 		me.setDevMode(true);
 		me.setEncoding("UTF-8");
 		me.setViewType(ViewType.JSP);
@@ -27,9 +24,7 @@ public class AppContextConfig extends JFinalConfig {
 	public void configHandler(Handlers me) {}
 
 	@Override
-	public void configInterceptor(Interceptors me) {
-		me.add(new ActionInterceptor());
-	}
+	public void configInterceptor(Interceptors me) {}
 
 	@Override
 	public void configPlugin(Plugins me) {

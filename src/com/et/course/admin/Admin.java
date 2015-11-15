@@ -1,22 +1,28 @@
 package com.et.course.admin;
 
-import com.jfinal.plugin.activerecord.Model;
+import com.et.course.model.SqlSessionModel;
 
-public class Admin extends Model<Admin>{
+public class Admin extends SqlSessionModel {
 
-	private static final long serialVersionUID = 1L;
-	
 	public static Admin me = new Admin();
-	
-	public boolean validate(String username,String password){
-		
-		Admin object = findFirst("SELECT * FROM ADMIN_PASSWORD WHERE USERNAME=? AND PASSWORD=MD5(?)",username,password);
-		
-		if (object != null) {
-			return true;
-		}
-		
-		return false;
+
+	private String username;
+
+	private String password;
+
+	public String getUsername() {
+		return username;
 	}
 
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 }

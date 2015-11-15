@@ -1,4 +1,4 @@
-package com.et.course.admin;
+package com.et.course.admin.clazz;
 
 import com.et.course.plugin.annotation.Controller;
 import com.et.course.plugin.support.BasicController;
@@ -7,6 +7,7 @@ import com.et.course.plugin.support.BasicController;
 public class ClassController extends BasicController {
 	
 	public void index(){
+		
 		render("index.jsp");
 	}
 }
