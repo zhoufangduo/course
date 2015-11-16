@@ -12,113 +12,235 @@ import com.et.course.plugin.mybatis.SqlSessionStaticFactory;
 public abstract class SqlSessionModel {
 
 	protected SqlSession session;
-	
-	private void initSession(){
+
+	private void before() {
 		this.session = SqlSessionStaticFactory.openSession();
 	}
 
 	public <T> T selectOne(String sql) {
-		initSession();
-		return session.selectOne(sql);
+		before();
+		try {
+			return session.selectOne(sql);
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			close();
+		}
 	}
 
 	public <T> T selectOne(String sql, Object params) {
-		initSession();
-		return session.selectOne(sql, params);
+		before();
+		try {
+			return session.selectOne(sql, params);
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			close();
+		}
 	}
 
 	public <T> List<T> selectList(String sql) {
-		initSession();
-		return session.selectList(sql);
+		before();
+		try {
+			return session.selectList(sql);
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			close();
+		}
 	}
 
 	public <T> List<T> selectList(String sql, Object params) {
-		initSession();
-		return session.selectList(sql, params);
+		before();
+		try {
+			return session.selectList(sql, params);
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			close();
+		}
 	}
 
 	public Map<Object, Object> selectMap(String arg0, String arg1) {
-		initSession();
-		return session.selectMap(arg0, arg1);
+		before();
+		try {
+			return session.selectMap(arg0, arg1);
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			close();
+		}
 	}
 
 	public Map<Object, Object> selectMap(String arg0, Object arg1, String arg2) {
-		initSession();
-		return session.selectMap(arg0, arg1, arg2);
+		before();
+		try {
+			return session.selectMap(arg0, arg1, arg2);
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			close();
+		}
 	}
 
 	public int insert(String sql) {
-		initSession();
-		return session.insert(sql);
+		before();
+		try {
+			return session.insert(sql);
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			close();
+		}
 	}
 
 	public int insert(String sql, Object params) {
-		initSession();
-		return session.insert(sql, params);
+		before();
+		try {
+			return session.insert(sql, params);
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			close();
+		}
 	}
 
 	public int update(String sql) {
-		initSession();
-		return session.update(sql);
+		before();
+		try {
+			return session.update(sql);
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			close();
+		}
 	}
 
 	public int update(String sql, Object params) {
-		initSession();
-		return session.update(sql, params);
+		before();
+		try {
+			return session.update(sql, params);
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			close();
+		}
 	}
 
 	public int delete(String sql) {
-		initSession();
-		return session.delete(sql);
+		before();
+		try {
+			return session.delete(sql);
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			close();
+		}
 	}
 
 	public int delete(String sql, Object params) {
-		initSession();
-		return session.delete(sql, params);
+		before();
+		try {
+			return session.delete(sql, params);
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			close();
+		}
 	}
 
 	public void commit() {
-		initSession();
-		session.commit();
+		before();
+		try {
+			session.commit();
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			close();
+		}
 	}
 
 	public void commit(boolean isCommit) {
-		initSession();
-		session.commit(isCommit);
+		before();
+		try {
+			session.commit(isCommit);
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			close();
+		}
 	}
 
 	public void rollback() {
-		initSession();
-		session.rollback();
+		before();
+		try {
+			session.rollback();
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			close();
+		}
 	}
 
 	public void rollback(boolean rollback) {
-		initSession();
-		session.rollback(rollback);
+		before();
+		try {
+			session.rollback(rollback);
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			close();
+		}
 	}
 
 	public void close() {
-		initSession();
-		session.close();
+		if (session != null) {
+			System.out.println("SqlSessionModel.close()");
+			session.close();
+		}
 	}
 
 	public void clearCache() {
-		initSession();
-		session.clearCache();
+		before();
+		try {
+			session.clearCache();
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			close();
+		}
 	}
 
 	public Configuration getConfiguration() {
-		initSession();
-		return session.getConfiguration();
+		before();
+		try {
+			return session.getConfiguration();
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			close();
+		}
 	}
 
 	public <T> Object getMapper(Class<T> clazz) {
-		initSession();
-		return session.getMapper(clazz);
+		before();
+		try {
+			return session.getMapper(clazz);
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			close();
+		}
 	}
 
 	public Connection getConnection() {
-		initSession();
-		return session.getConnection();
+		before();
+		try {
+			return session.getConnection();
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			close();
+		}
 	}
 }

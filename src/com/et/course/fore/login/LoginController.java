@@ -22,6 +22,7 @@ public class LoginController extends BasicController {
 		
 		if (user != null) {
 			this.setSessionAttr(CONSTANT.USER, user);
+			this.setSessionAttr(CONSTANT.USER_ID, user.getId());
 			redirect("/mycourse/index");
 		}else{
 			redirect("/login/toLogin?error=true");

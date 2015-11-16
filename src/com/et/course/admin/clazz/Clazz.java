@@ -4,7 +4,7 @@ import com.et.course.model.SqlSessionModel;
 
 public class Clazz extends SqlSessionModel {
 
-	public static Clazz clazz = new Clazz();
+	public static Clazz me = new Clazz();
 
 	private int id;
 
