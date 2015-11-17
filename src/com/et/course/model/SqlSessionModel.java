@@ -16,6 +16,13 @@ public abstract class SqlSessionModel {
 	private void before() {
 		this.session = SqlSessionStaticFactory.openSession();
 	}
+	
+	private void after() {
+		if (session != null) {
+			commit();
+			close();
+		}
+	}
 
 	public <T> T selectOne(String sql) {
 		before();
@@ -90,7 +97,7 @@ public abstract class SqlSessionModel {
 		} catch (Exception e) {
 			throw new RuntimeException(e.getMessage());
 		} finally {
-			close();
+			after();
 		}
 	}
 
@@ -101,7 +108,7 @@ public abstract class SqlSessionModel {
 		} catch (Exception e) {
 			throw new RuntimeException(e.getMessage());
 		} finally {
-			close();
+			after();
 		}
 	}
 
@@ -112,7 +119,7 @@ public abstract class SqlSessionModel {
 		} catch (Exception e) {
 			throw new RuntimeException(e.getMessage());
 		} finally {
-			close();
+			after();
 		}
 	}
 
@@ -123,7 +130,7 @@ public abstract class SqlSessionModel {
 		} catch (Exception e) {
 			throw new RuntimeException(e.getMessage());
 		} finally {
-			close();
+			after();
 		}
 	}
 
@@ -134,7 +141,7 @@ public abstract class SqlSessionModel {
 		} catch (Exception e) {
 			throw new RuntimeException(e.getMessage());
 		} finally {
-			close();
+			after();
 		}
 	}
 
@@ -145,70 +152,34 @@ public abstract class SqlSessionModel {
 		} catch (Exception e) {
 			throw new RuntimeException(e.getMessage());
 		} finally {
-			close();
+			after();
 		}
 	}
 
 	public void commit() {
-		before();
-		try {
-			session.commit();
-		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
-		} finally {
-			close();
-		}
+		session.commit();
 	}
 
 	public void commit(boolean isCommit) {
-		before();
-		try {
-			session.commit(isCommit);
-		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
-		} finally {
-			close();
-		}
+		session.commit(isCommit);
 	}
 
 	public void rollback() {
-		before();
-		try {
-			session.rollback();
-		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
-		} finally {
-			close();
-		}
+		session.rollback();
 	}
 
 	public void rollback(boolean rollback) {
-		before();
-		try {
-			session.rollback(rollback);
-		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
-		} finally {
-			close();
-		}
+		session.rollback(rollback);
 	}
 
 	public void close() {
 		if (session != null) {
-			System.out.println("SqlSessionModel.close()");
 			session.close();
 		}
 	}
 
 	public void clearCache() {
-		before();
-		try {
-			session.clearCache();
-		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
-		} finally {
-			close();
-		}
+		session.clearCache();
 	}
 
 	public Configuration getConfiguration() {

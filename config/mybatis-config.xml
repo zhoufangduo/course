@@ -12,7 +12,7 @@
 	<environments default="development">
 		<environment id="development">
 			<transactionManager type="MANAGED">
-				<property name="closeConnection" value="false" />
+				<property name="closeConnection" value="true" />
 			</transactionManager>
 			<dataSource type="POOLED">
 				<property name="driver" value="${driver}" />
