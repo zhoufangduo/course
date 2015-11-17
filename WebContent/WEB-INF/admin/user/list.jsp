@@ -38,7 +38,7 @@
 		<br />
 		<p />
 		<div class="container">
-			<form action="<%=basePath%>/admin/user/index" class="form-inline">
+			<form action="<%=basePath%>/admin/user/index?user=true" class="form-inline">
 				<div class="input-group">
 					<span class="input-group-addon">班级</span> 
 					<select class="c-select" name="classId">

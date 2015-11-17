@@ -22,6 +22,13 @@
 			font-size: 13px;
 		}
 	</style>
+	<script type="text/javascript">
+		function deleteById(id,name){
+			if(window.confirm("你确定要删除该班级:" + name+"?")){
+				window.location = "<%=basePath%>/admin/class/deleteById?id=" + id;
+			}
+		}
+	</script>
 </head>
 <body>
 	<jsp:include page="../menu.jsp"></jsp:include>
@@ -62,7 +69,7 @@
 									    	编辑
 									  </button>
 									  <div class="dropdown-menu">
-									    <a class="dropdown-item" href="#">删除</a>
+									    <a class="dropdown-item" href="javascript:deleteById(${clazz.id},'${clazz.name}')">删除</a>
 									    <a class="dropdown-item" href="#">修改</a>
 									  </div>
 									</div>
@@ -75,7 +82,7 @@
 		</div>
 	</div>
 	
-	<form action="<%=basePath%>/admin/class/add" method="post">
+	<form action="<%=basePath%>/admin/class/add?clazz=true" method="post">
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">

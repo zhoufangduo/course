@@ -13,6 +13,6 @@ public class UserController extends BasicController {
 	
 	public void add(){
 		User.me.insert("User.add", getParams());
-		redirect("index");
+		redirect("index?user=true");
 	}
 }

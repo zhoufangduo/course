@@ -2,6 +2,8 @@ package com.et.course.admin.clazz;
 
 import java.util.Map;
 
+import org.apache.commons.lang3.StringUtils;
+
 import com.et.course.constant.CONSTANT;
 import com.et.course.plugin.annotation.Controller;
 import com.et.course.plugin.support.BasicController;
@@ -20,6 +22,15 @@ public class ClassController extends BasicController {
 		params.put("creater", id);
 		
 		Clazz.me.insert("Class.add", params);
-		redirect("/admin/class/index");
+		redirect("/admin/class/index?clazz=true");
+	}
+	
+	public void deleteById(){
+		String id = getPara("id");
+		if (StringUtils.isNotEmpty(id)) {
+			Clazz.me.delete("Class.deleteById", id);
+		}
+		
+		redirect("/admin/class/index?clazz=true");
 	}
 }
