@@ -19,8 +19,13 @@
 			border-bottom-right-radius:3px;border-top-right-radius:3px;
 		}
 		
+		.c-select{
+			font-family: "微软雅黑";
+		}
+		
 		.form-group .c-select{
 			border-radius:.25rem;
+			
 		}
 		
 		.table-sm td, .table-sm th {
@@ -43,15 +48,13 @@
 					<span class="input-group-addon">班级</span> 
 					<select class="c-select" name="classId">
 						<option value="" selected>全部</option>
-						<option value="0">1402</option>
-						<option value="1">1403</option>
-						<option value="2">1501</option>
-						<option value="3">1502</option>
-						<option value="3">1503</option>
+						<c:forEach items="${requestScope.clazzs}" var="clazz">
+							<option value="${clazz.id}">${clazz.name}</option>
+						</c:forEach>
 					</select> 
 				</div>
 				&nbsp;
-				<div class="input-group" style="width: 58%;">
+				<div class="input-group" style="width: 54%;">
 					<span class="input-group-addon">用户名</span> 
 					<input type="text" class="form-control" placeholder="用户名匹配" name="username"> 
 					<span class="input-group-btn">
@@ -88,16 +91,23 @@
 							<td>${user.email}</td>
 							<td>${user.createTime}</td>
 							<td>
-								<div class="btn-group">
-								  <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" 
-								  		data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								    	编辑
-								  </button>
-								  <div class="dropdown-menu">
-								    <a class="dropdown-item" href="#">删除</a>
-								    <a class="dropdown-item" href="#">修改</a>
-								  </div>
-								</div>
+								<c:choose>
+									<c:when test="${user.role != 'ADMIN'}">
+										<div class="btn-group">
+										  <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" 
+										  		data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										    	编辑
+										  </button>
+										  <div class="dropdown-menu">
+										    <a class="dropdown-item" href="#">删除</a>
+										    <a class="dropdown-item" href="#">修改</a>
+										  </div>
+										</div>
+									</c:when>
+									<c:otherwise>
+										<a class="btn btn-secondary btn-sm">详情</a>
+									</c:otherwise>
+								</c:choose>
 							</td>
 						</tr>
 					</c:forEach>
@@ -133,7 +143,7 @@
 		</div>
 	</div>
 	 
-	<form action="" method="post">
+	<form action="<%=basePath%>/admin/user/add" method="post">
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
@@ -168,11 +178,9 @@
 				    <div class="col-sm-10">
 				     	<select class="c-select" id="classId" name="classId" style="width: 100%">
 				     		<option value="" selected>全部</option>
-							<option value="0">1402</option>
-							<option value="1">1403</option>
-							<option value="2">1501</option>
-							<option value="3">1502</option>
-							<option value="3">1503</option>
+							<c:forEach items="${requestScope.clazzs}" var="clazz">
+								<option value="${clazz.id}">${clazz.name}</option>
+							</c:forEach>
 				     	</select>
 				    </div>
 				 </div>

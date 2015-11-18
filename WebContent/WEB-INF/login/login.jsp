@@ -100,14 +100,14 @@
 							</div>
 							<div class="form-group row">
 							    <div class="col-sm-offset-2">
-							     	<div class="col-xs-3" style="margin-top: 6px;">
+							     	<div class="col-xs-4" style="margin-top: 6px;">
 			    					  <label class="c-input c-checkbox">
 										  <input type="checkbox" value="true" name="remeber" id="remeber">
 										  <span class="c-indicator"></span>
 										     记住密码
 								 	 </label>
 			  						</div>
-								    <div class="col-xs-9" style="text-align: right;">
+								    <div class="col-xs-8" style="text-align: right;">
 								  		<button type="submit" class="btn btn-primary" style="width: 120px;">登&nbsp;&nbsp;录</button>
 								    </div>
 							    </div>
