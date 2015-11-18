@@ -38,8 +38,6 @@
 		<div class="container">
 			<div style="float: right;">
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">创&nbsp;建</button>
-				<button type="button" class="btn btn-info">导&nbsp;入</button>
-				<button type="button" class="btn btn-info">导&nbsp;出</button>
 				<br/><p/>
 			</div>
 			<table class="table table-hover table-sm">
