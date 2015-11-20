@@ -43,20 +43,23 @@
 		<br />
 		<p />
 		<div class="container">
-			<form action="<%=basePath%>/admin/user/index?user=true" class="form-inline">
+			<form action="<%=basePath%>/admin/user/index" class="form-inline">
+				<input type="hidden" name="user" value="true">
 				<div class="input-group">
 					<span class="input-group-addon">班级</span> 
 					<select class="c-select" name="classId">
 						<option value="" selected>全部</option>
 						<c:forEach items="${requestScope.clazzs}" var="clazz">
-							<option value="${clazz.id}">${clazz.name}</option>
+							<option value="${clazz.id}" 
+									<c:if test="${param.classId == clazz.id}">selected="selected"</c:if>
+							>${clazz.name}</option>
 						</c:forEach>
 					</select> 
 				</div>
 				&nbsp;
 				<div class="input-group" style="width: 54%;">
 					<span class="input-group-addon">用户名</span> 
-					<input type="text" class="form-control" placeholder="用户名匹配" name="username"> 
+					<input type="text" class="form-control" placeholder="用户名匹配" name="username" value="${param.username}"> 
 					<span class="input-group-btn">
 						<button type="submit" class="btn btn-secondary">搜&nbsp;索</button>
 					</span>
@@ -84,13 +87,13 @@
 				<tbody>
 					<c:forEach items="${requestScope.users}" var="user" varStatus="st">
 						<tr>
-							<th scope="row" width="5%">${st.index+1}</th>
-							<td width="12%">${user.name}</td>
-							<td width="10%">${user.username}</td>
+							<th scope="row">${st.index+1}</th>
+							<td>${user.name}</td>
+							<td>${user.username}</td>
 							<td>${user.className}</td>
 							<td>${user.email}</td>
 							<td>${user.createTime}</td>
-							<td>
+							<td width="10%">
 								<c:choose>
 									<c:when test="${user.role != 'ADMIN'}">
 										<div class="btn-group">
@@ -99,7 +102,7 @@
 										    	编辑
 										  </button>
 										  <div class="dropdown-menu">
-										    <a class="dropdown-item" href="#">删除</a>
+										    <a class="dropdown-item" href="<%=basePath%>/admin/user/deleteById?id=${user.id}">删除</a>
 										    <a class="dropdown-item" href="#">修改</a>
 										  </div>
 										</div>
@@ -158,7 +161,7 @@
 	       		 <div class="form-group row">
 				    <label for="username" class="col-sm-2 form-control-label">用户名</label>
 				    <div class="col-sm-10">
-				      <input type="email" class="form-control" id="username" name="username" placeholder="登录用户名">
+				      <input type="text" class="form-control" id="username" name="username" placeholder="登录用户名">
 				    </div>
 				 </div>
 				 <div class="form-group row">
@@ -177,7 +180,6 @@
 				    <label for="classId" class="col-sm-2 form-control-label">班&nbsp;级</label>
 				    <div class="col-sm-10">
 				     	<select class="c-select" id="classId" name="classId" style="width: 100%">
-				     		<option value="" selected>全部</option>
 							<c:forEach items="${requestScope.clazzs}" var="clazz">
 								<option value="${clazz.id}">${clazz.name}</option>
 							</c:forEach>
@@ -191,6 +193,13 @@
 				     		<option value="MALE" selected>男</option>
 							<option value="FEMALE">女</option>
 				     	</select>
+				    </div>
+				 </div>
+				 
+				  <div class="form-group row">
+				    <label for="email" class="col-sm-2 form-control-label">Email</label>
+				    <div class="col-sm-10">
+				    	 <input type="text" class="form-control" name="email" id="email"  placeholder="邮件">
 				    </div>
 				 </div>
 				 

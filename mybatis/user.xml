@@ -18,14 +18,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				U.`USERNAME` = #{username}
 			</if>
 			<if test="classId != null and classId != ''">
-				C.`ID` = #{classId}
+				AND C.`ID` = #{classId}
 			</if>
 		</where>
 	</select>
 	
 	<insert id="add" parameterType="Map">
-		INSERT INTO `USER`(`CLASS_ID`,`NAME`,`USERNAME`,`PASSWORD`,`ROLE`,`SEX`)
-			VALUE(#{classId},#{name},#{username},#{password},#{role},#{sex})
+		INSERT INTO `USER`(`CLASS_ID`,`NAME`,`USERNAME`,`PASSWORD`,`ROLE`,`SEX`,`CREATETIME`,`CREATER`,EMAIL)
+			VALUE(#{classId},#{name},#{username},#{password},#{role},#{sex},NOW(),#{creater},#{email})
 	</insert>
+	
+	<delete id="deleteById" parameterType="string">
+		DELETE FROM `USER` WHERE ID = #{id}
+	</delete>
 	
 </mapper>

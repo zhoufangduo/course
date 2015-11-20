@@ -6,6 +6,8 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
+import com.et.course.admin.user.User;
+import com.et.course.constant.CONSTANT;
 import com.jfinal.core.Controller;
 
 public class BasicController extends Controller {
@@ -41,5 +43,18 @@ public class BasicController extends Controller {
 		logger.info(buffer.append("}").toString());
 		
 		return params;
+	}
+	
+	protected int getUserId(){
+		return (Integer)getSessionAttr(CONSTANT.USER_ID);
+	}
+	
+	protected String getUserName(){
+		User user = getSessionAttr(CONSTANT.USER);
+		if (user != null) {
+			return user.getUsername();
+		}
+		
+		return "";
 	}
 }
