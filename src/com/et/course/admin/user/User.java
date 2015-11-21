@@ -16,6 +16,8 @@ public class User extends SqlSessionModel {
 
 	private String className;
 
+	private String classId;
+
 	private String sex;
 
 	private String email;
@@ -124,6 +126,14 @@ public class User extends SqlSessionModel {
 
 	public void setCreater(String creater) {
 		this.creater = creater;
+	}
+
+	public String getClassId() {
+		return classId;
+	}
+
+	public void setClassId(String classId) {
+		this.classId = classId;
 	}
 
 }

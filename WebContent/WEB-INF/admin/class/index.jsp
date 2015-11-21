@@ -58,19 +58,12 @@
 							<td width="12%">${clazz.name}</td>
 							<td width="20%">${clazz.createTime}</td>
 							<td width="10%">${clazz.creater}</td>
-							<td>${clazz.description}</td>
+							<td title="${clazz.description}">
+								${clazz.description}
+							</td>
 							<td width="10%">
 								<c:if test="${clazz.id != 1 }">
-									<div class="btn-group">
-									  <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" 
-									  		data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									    	编辑
-									  </button>
-									  <div class="dropdown-menu">
-									    <a class="dropdown-item" href="javascript:deleteById(${clazz.id},'${clazz.name}')">删除</a>
-									    <a class="dropdown-item" href="#">修改</a>
-									  </div>
-									</div>
+									<a class="btn btn-secondary btn-sm" href="javascript:deleteById(${clazz.id},'${clazz.name}')">删除</a>
 								</c:if>
 							</td>
 						</tr>

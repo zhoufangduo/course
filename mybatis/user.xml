@@ -6,6 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getUsers" parameterType="Map" resultType="User">
 		SELECT 
 			U.`ID`, C.`NAME` as className,
+			U.`CLASS_ID` AS classId,
 			U.`NAME`, U.`USERNAME`,
 			U.`ROLE`, U.`SEX`,
 			U.`EMAIL`, U.`WENXIN`, U.`QQ`,
@@ -25,7 +26,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<insert id="add" parameterType="Map">
 		INSERT INTO `USER`(`CLASS_ID`,`NAME`,`USERNAME`,`PASSWORD`,`ROLE`,`SEX`,`CREATETIME`,`CREATER`,EMAIL)
-			VALUE(#{classId},#{name},#{username},#{password},#{role},#{sex},NOW(),#{creater},#{email})
+			VALUE(#{classId},#{name},#{username},MD5(#{password}),#{role},#{sex},NOW(),#{creater},#{email})
 	</insert>
 	
 	<delete id="deleteById" parameterType="string">
