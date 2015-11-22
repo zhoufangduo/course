@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 <% String basePath = request.getContextPath();%>
+<%@taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
 <form action="<%=basePath%>/admin/user/update" method="post">
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
@@ -75,14 +76,8 @@
 
 <script type="text/javascript">
 	
-	function toUpdate(id){
-		<c:forEach items="${requestScope.users}" var="user">
-			<c:if test="${user.id == '"+id+"'}">
-				$("#username").val("${user.username}");
-				$("#name").val("${user.name}");
-				$("#classId").val("${user.classId}");
-			</c:if>
-		</c:forEach>
-	}
+function toUpdate(id){
+	
+}
 
 </script>
