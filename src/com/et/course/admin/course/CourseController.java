@@ -6,4 +6,8 @@ import com.et.course.plugin.support.BasicController;
 @Controller(controllerKey = "admin/course", viewPath = "/admin/course")
 public class CourseController extends BasicController{
 	
+	public void list(){
+		
+		render("list.jsp");
+	}
 }
