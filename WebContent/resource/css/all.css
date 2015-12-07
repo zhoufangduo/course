@@ -280,3 +280,44 @@ input{
     transition: all 0.3s ease;
     text-decoration: none;
 }
+
+.tooltips{
+    position:absolute;
+    width:auto;
+    height:auto;
+    z-index:10000;
+    background:#d9534f;
+    border:1px solid #d43f3a;
+    border-radius:4px;
+    color: #FFFFFF;
+    margin-top: 5px;
+}
+
+.tipstext{
+	 padding:3px 5px;
+	 margin-top:-1px;
+	/*  font-size: 5px; */
+}
+
+.arrow{
+    position:absolute;
+    width: 0px;
+    height:0px;
+    line-height: 0px;
+    border-width: 0 5px 5px;
+    border-style: solid dashed dashed dashed;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+.arrow-border{
+   color:#d43f3a;
+   left: 50%;
+   margin-left: -5px;
+   margin-top: -6px;
+}
+.arrow-bg{
+    color: #d9534f;
+    left: 50%;
+    margin-top: -5px;
+   	margin-left: -5px;
+}
