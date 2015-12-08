@@ -6,6 +6,7 @@
 	 	<typeAlias alias="User" type="com.et.course.admin.user.User"/>
 	 	<typeAlias alias="Admin" type="com.et.course.admin.Admin"/>
 	 	<typeAlias alias="Clazz" type="com.et.course.admin.clazz.Clazz"/>
+	 	<typeAlias alias="Course" type="com.et.course.fore.course.Course"/>
 	</typeAliases>
 	
 	<environments default="development">
