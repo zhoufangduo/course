@@ -45,8 +45,8 @@ public class BasicController extends Controller {
 		return params;
 	}
 	
-	protected int getUserId(){
-		return (Integer)getSessionAttr(CONSTANT.USER_ID);
+	protected String getUserId(){
+		return String.valueOf((Integer)getSessionAttr(CONSTANT.USER_ID));
 	}
 	
 	protected String getUserName(){

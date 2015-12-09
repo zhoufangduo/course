@@ -7,6 +7,7 @@
 	 	<typeAlias alias="Admin" type="com.et.course.admin.Admin"/>
 	 	<typeAlias alias="Clazz" type="com.et.course.admin.clazz.Clazz"/>
 	 	<typeAlias alias="Course" type="com.et.course.fore.course.Course"/>
+	 	<typeAlias alias="Type"  type="com.et.course.admin.course.Type"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -27,5 +28,7 @@
 		<mapper resource="login.xml"/>
 		<mapper resource="user.xml"/>
 		<mapper resource="clazz.xml"/>
+		<mapper resource="course.xml"/>
+		<mapper resource="type.xml"/>
 	</mappers>
 </configuration>

@@ -1,10 +1,10 @@
-package com.et.course.fore.course;
+package com.et.course.admin.course;
 
 import com.et.course.model.SqlSessionModel;
 
-public class Course extends SqlSessionModel {
+public class Type extends SqlSessionModel {
 
-	public static Course me = new Course();
+	public static Type me = new Type();
 
 	private int id;
 
@@ -15,10 +15,6 @@ public class Course extends SqlSessionModel {
 	private String creater;
 
 	private String description;
-
-	private String audiences;
-
-	private String logo;
 
 	public int getId() {
 		return id;
@@ -44,22 +40,6 @@ public class Course extends SqlSessionModel {
 		this.createTime = createTime;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getAudiences() {
-		return audiences;
-	}
-
-	public void setAudiences(String audiences) {
-		this.audiences = audiences;
-	}
-
 	public String getCreater() {
 		return creater;
 	}
@@ -68,12 +48,12 @@ public class Course extends SqlSessionModel {
 		this.creater = creater;
 	}
 
-	public String getLogo() {
-		return logo;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setLogo(String logo) {
-		this.logo = logo;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 }

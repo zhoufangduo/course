@@ -32,7 +32,7 @@
 			padding: .5rem;
 		}
 		
-		.dropdown-item{
+		.btn-group .dropdown-item{
 			font-size: 13px;
 		}
 	</style>

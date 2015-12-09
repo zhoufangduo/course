@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <% String basePath = request.getContextPath();%>
 <%@taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>易通软件-后台管理-用户管理</title>
+	<title>易通软件-后台管理-课程管理</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<link href="<%=basePath%>/resource/images/logo.ico" rel="shortcut icon">
@@ -35,6 +35,9 @@
 			padding: .5rem;
 		}
 		
+		.course_name{
+			font-weight: bold;
+		}
 		
 
 	</style>
@@ -99,48 +102,29 @@
 				</div>
 			</form>
 			<p/><br/>
-			<div>
-				<div class="row">
-	 				<div class="col-sm-4">
+			<div class="row">
+				<c:forEach items="${requestScope.list}" var="course" varStatus="st">
+					<c:if test="${st.count % 5 == 0}">
+						<p class="row" />
+					</c:if>
+	 				<div class="col-sm-3" onclick="" style="cursor: pointer;">
 						<div class="card">
-						  <img class="card-img-top" src="<%=basePath%>/resource/images/card.jpg">
+						  <c:if test="${course.logo == null}">
+							  <img class="card-img-top" src="<%=basePath%>/resource/images/course.png">
+						  </c:if>
 						  <div class="card-block">
 						    <p class="card-text">
-						    	html
+						    	<span class="course_name">
+							    	${course.name}
+						    	</span>
 						    	<span style="float: right;">
-						    		<span class="fa fa-users fa-lg"></span>&nbsp;15
+						    		<span class="fa fa-users fa-lg"></span>&nbsp;无成员
 						    	</span> 
 						    </p>
 						  </div>
 						</div>
 					</div>
-					<div class="col-sm-4">
-						<div class="card">
-						  <img class="card-img-top" src="<%=basePath%>/resource/images/card2.jpg">
-						  <div class="card-block">
-						    <p class="card-text">javaScript</p>
-						  </div>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="card">
-						  <img class="card-img-top" src="<%=basePath%>/resource/images/card3.jpg">
-						  <div class="card-block">
-						    <p class="card-text">java基本</p>
-						  </div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-4">
-						<div class="card">
-						  <img class="card-img-top" src="<%=basePath%>/resource/images/card.jpg">
-						  <div class="card-block">
-						    <p class="card-text">java基本</p>
-						  </div>
-						</div>
-					</div>
-				</div>
+				</c:forEach>
 			</div>
 		</div>
 	</div>
