@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<insert id="add" parameterType="Map" >
 		INSERT INTO `CLAZZ`(`NAME`,`CREATETIME`,`CREATER`,`DESCRIPTION`)
-		VALUES(#{name},NOW(),#{creater},#{description})
+		VALUES(#{name},CURDATE(),#{creater},#{description})
 	</insert>
 	
 	<delete id="deleteById" parameterType="string">

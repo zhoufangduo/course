@@ -16,7 +16,7 @@
 	<script src="<%=basePath%>/resource/bootstrap/js/bootstrap.min.js"></script>
 	<style type="text/css">
 		.input-group .c-select{
-			border-bottom-right-radius:3px;border-top-right-radius:3px;
+			border-bottom-right-radius:4px;border-top-right-radius:4px;
 		}
 		.c-select{
 			font-family: "微软雅黑";
@@ -39,6 +39,12 @@
 			font-weight: bold;
 		}
 		
+		.recommend{
+			width:100px;
+			position: absolute;
+			z-index: 100;
+		}
+		
 
 	</style>
 </head>
@@ -46,8 +52,12 @@
 	<jsp:include page="../menu.jsp"></jsp:include>
 	<div class="body-container">
 		<br />
-		<p />
 		<div class="container">
+			<ol class="breadcrumb" style="margin-bottom: 5px;">
+			  <li>课程管理</li>
+			  <li class="active">课程列表</li>
+			</ol>
+			<p />
 	 	 	<form action="<%=basePath%>/admin/course/list" class="form-inline">
 				<input type="hidden" name="course" value="true">
 				<div class="input-group">
@@ -74,6 +84,18 @@
 					</select> 
 				</div>
 				&nbsp;&nbsp;
+				<div class="input-group">
+					<span class="input-group-addon">分类</span> 
+					<select class="c-select" name="classId">
+						<option value="" selected>全部</option>
+						<c:forEach items="${requestScope.clazzs}" var="clazz">
+							<option value="${clazz.id}" 
+									<c:if test="${param.classId == clazz.id}">selected="selected"</c:if>
+							>${clazz.name}</option>
+						</c:forEach>
+					</select> 
+				</div>
+				&nbsp;&nbsp;
 				<div class="input-group" style="width: 50%;">
 					<span class="input-group-addon">课程</span> 
 					<input type="text" class="form-control" placeholder="课程匹配" name="username" value="${param.username}"> 
@@ -83,22 +105,29 @@
 				</div>
 				<p/>
 				<div class="state">
-				  	<label class="c-input c-checkbox">
-					  <input type="checkbox" value="true" name="remeber" id="remeber">
-					  <span class="c-indicator"></span>全部
-			 	 	</label>
-			 	    <label class="c-input c-checkbox">
-					  <input type="checkbox" value="true" name="remeber" id="remeber">
-					  <span class="c-indicator"></span>已学院
-			 	 	</label>
-			 	 	<label class="c-input c-checkbox">
-					  <input type="checkbox" value="true" name="remeber" id="remeber">
-					  <span class="c-indicator"></span>学习中
-			 	 	</label>
-			 	 	<label class="c-input c-checkbox">
-					  <input type="checkbox" value="true" name="remeber" id="remeber">
-					  <span class="c-indicator"></span>推荐
-			 	 	</label>
+					<label class="c-input c-radio">
+					  <input id="radio1" name="radio" type="radio">
+					  <span class="c-indicator"></span>
+					 	 全部
+					</label>
+					&nbsp;
+					<label class="c-input c-radio">
+					  <input id="radio1" name="radio" type="radio">
+					  <span class="c-indicator"></span>
+					 	 学习中
+					</label>
+					&nbsp;
+					<label class="c-input c-radio">
+					  <input id="radio2" name="radio" type="radio">
+					  <span class="c-indicator"></span>
+					  	已学完
+					</label>
+					&nbsp;
+					<label class="c-input c-radio">
+					  <input id="radio2" name="radio" type="radio">
+					  <span class="c-indicator"></span>
+					  	推荐
+					</label>
 				</div>
 			</form>
 			<p/><br/>
@@ -108,6 +137,7 @@
 						<p class="row" />
 					</c:if>
 	 				<div class="col-sm-3" onclick="" style="cursor: pointer;">
+						<img class="recommend"  src="<%=basePath%>/resource/images/recommend.png">
 						<div class="card">
 						  <c:if test="${course.logo == null}">
 							  <img class="card-img-top" src="<%=basePath%>/resource/images/course.png">

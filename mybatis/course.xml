@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="Course">
 	<insert id="add" parameterType="Map">
 		INSERT INTO COURSES(`NAME`,`CREATETIME`,`CREATER`,`DESCRIPTION`,`AUDIENCES`)
-		VALUES(#{name},NOW(),#{creater},#{description},#{audiences})
+		VALUES(#{name},CURDATE(),#{creater},#{description},#{audiences})
 	</insert>
 	
 	<select id="list" parameterType="map" resultType="Course">

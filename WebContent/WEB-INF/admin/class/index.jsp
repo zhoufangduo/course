@@ -34,8 +34,12 @@
 	<jsp:include page="../menu.jsp"></jsp:include>
 	<div class="body-container">
 		<br />
-		<p />
 		<div class="container">
+			<ol class="breadcrumb" style="margin-bottom: 5px;">
+			  <li>班级管理</li>
+			  <li class="active">班级列表</li>
+			</ol>
+			<p />
 			<div style="float: right;">
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">创&nbsp;建</button>
 				<br/><p/>

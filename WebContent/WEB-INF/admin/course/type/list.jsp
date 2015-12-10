@@ -21,13 +21,31 @@
 				}
 			}
 		</script>
+		<style type="text/css">
+		
+			table{  
+			   
+			    table-layout:fixed;
+			}
+			  
+			td{  
+			    word-break:keep-all;
+			    white-space:nowrap;
+			    overflow:hidden; 
+			    text-overflow:ellipsis; 
+			}  
+		</style>
 	</head>
 	<body>
 		<jsp:include page="../../menu.jsp"></jsp:include>
 		<div class="body-container">
-			<br />
-			<p />
+			<br/>
 			<div class="container">
+				<ol class="breadcrumb" style="margin-bottom: 5px;">
+				  <li>课程管理</li>
+				  <li class="active">课程分类</li>
+				</ol>
+				<p />
 				<div style="float: right;">
 					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">创&nbsp;建</button>
 					<br/><p/>
@@ -37,8 +55,8 @@
 						<tr>
 							<th>序号</th>
 							<th>分类</th>
-							<th>创建时间</th>
 							<th>创建者</th>
+							<th>创建时间</th>
 							<th>描述</th>
 							<th>操作</th>
 						</tr>
@@ -46,10 +64,16 @@
 					<tbody>
 						<c:forEach items="${requestScope.types}" var="type" varStatus="st">
 							<tr>
-								<th scope="row" width="8%">${st.index+1}</th>
-								<td width="15%">${type.name}</td>
-								<td width="28%">${type.createTime}</td>
-								<td width="12%">${type.creater}</td>
+								<th scope="row" width="5%">${st.index+1}</th>
+								<td width="10%" title="${type.name}">
+									${type.name}
+								</td>
+								<td width="12%" title="${type.creater}">
+									${type.creater}
+								</td>
+								<td width="28%"  title="${type.createTime}">
+									${type.createTime}
+								</td>
 								<td title="${type.description}">
 									${type.description}
 								</td>

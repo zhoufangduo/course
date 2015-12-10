@@ -11,7 +11,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<insert id="add" parameterType="map">
 		INSERT INTO COURSE_TYPE(`NAME`,`CREATETIME`,`CREATER`,`DESCRIPTION`)
-		 VALUES(#{name},NOW(),#{creator},#{description})
+		 VALUES(#{name},CURDATE(),#{creator},#{description})
 	</insert>
 	
 	<delete id="deleteById" parameterType="String">

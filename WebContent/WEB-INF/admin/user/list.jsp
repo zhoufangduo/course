@@ -41,8 +41,12 @@
 	<jsp:include page="../menu.jsp"></jsp:include>
 	<div class="body-container">
 		<br />
-		<p />
 		<div class="container">
+			<ol class="breadcrumb" style="margin-bottom: 5px;">
+			  <li>用户管理</li>
+			  <li class="active">用户列表</li>
+			</ol>
+			<p />
 			<form action="<%=basePath%>/admin/user/index" class="form-inline">
 				<input type="hidden" name="user" value="true">
 				<div class="input-group">
