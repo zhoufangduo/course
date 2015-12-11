@@ -37,16 +37,28 @@
 		
 		.course_name{
 			font-weight: bold;
+			text-align: center;
+			font-size: 14px;
 		}
 		
-		.recommend{
-			width:100px;
-			position: absolute;
-			z-index: 100;
+		
+		.bar{
+			font-size: 12px;
 		}
 		
-
+		.mark{
+			color: red;
+			float: right;
+		}
+		
 	</style>
+	<script type="text/javascript">
+		
+		function toView (id){
+			window.location = "";
+		}
+	
+	</script>
 </head>
 <body>
 	<jsp:include page="../menu.jsp"></jsp:include>
@@ -136,21 +148,23 @@
 					<c:if test="${st.count % 5 == 0}">
 						<p class="row" />
 					</c:if>
-	 				<div class="col-sm-3" onclick="" style="cursor: pointer;">
-						<img class="recommend"  src="<%=basePath%>/resource/images/recommend.png">
+	 				<div class="col-sm-3" onclick="toView('${course.id}')" style="cursor: pointer;">
 						<div class="card">
 						  <c:if test="${course.logo == null}">
 							  <img class="card-img-top" src="<%=basePath%>/resource/images/course.png">
 						  </c:if>
 						  <div class="card-block">
-						    <p class="card-text">
-						    	<span class="course_name">
-							    	${course.name}
-						    	</span>
+						  	<div class="course_name" style="margin-top: -6px;">
+							    ${course.name}
+						    </div>
+					    	<div class="bar">
+					    		<span class="label label-danger">
+							    	<i class="fa fa-star fa-lg"></i>推荐
+								</span>
 						    	<span style="float: right;">
 						    		<span class="fa fa-users fa-lg"></span>&nbsp;无成员
 						    	</span> 
-						    </p>
+					    	</div>
 						  </div>
 						</div>
 					</div>

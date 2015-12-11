@@ -32,10 +32,10 @@
 		<li class="nav-item">
 			<c:choose>
 				<c:when test="${param.clazz == 'true'}">
-					<a class="nav-link active" href="<%=basePath%>/admin/class/index?clazz=true">班级管理</a>
+					<a class="nav-link active" href="<%=basePath%>/admin/class/index?clazz=true">分组管理</a>
 				</c:when>
 				<c:otherwise>
-					<a class="nav-link" href="<%=basePath%>/admin/class/index?clazz=true">班级管理</a>
+					<a class="nav-link" href="<%=basePath%>/admin/class/index?clazz=true">分组管理</a>
 				</c:otherwise>
 			</c:choose>
 		</li>

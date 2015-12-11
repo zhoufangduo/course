@@ -36,7 +36,7 @@
 		<br />
 		<div class="container">
 			<ol class="breadcrumb" style="margin-bottom: 5px;">
-			  <li>班级管理</li>
+			  <li>分组管理</li>
 			  <li class="active">班级列表</li>
 			</ol>
 			<p />
