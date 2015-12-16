@@ -11,4 +11,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="list" parameterType="map" resultType="Course">
 		SELECT * FROM COURSES
 	</select>
+	
+	<select id="view" parameterType="String" resultType="Course">
+		SELECT * FROM COURSES WHERE ID = #{value}
+	</select>
+	
 </mapper>

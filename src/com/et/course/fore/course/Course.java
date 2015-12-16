@@ -20,6 +20,8 @@ public class Course extends SqlSessionModel {
 
 	private String logo;
 
+	private String target;
+
 	public int getId() {
 		return id;
 	}
@@ -74,6 +76,14 @@ public class Course extends SqlSessionModel {
 
 	public void setLogo(String logo) {
 		this.logo = logo;
+	}
+
+	public String getTarget() {
+		return target;
+	}
+
+	public void setTarget(String target) {
+		this.target = target;
 	}
 
 }

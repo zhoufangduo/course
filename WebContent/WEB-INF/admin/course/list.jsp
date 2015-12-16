@@ -55,7 +55,7 @@
 	<script type="text/javascript">
 		
 		function toView (id){
-			window.location = "";
+			window.open('http://www.hao123.com','_blank')
 		}
 	
 	</script>
