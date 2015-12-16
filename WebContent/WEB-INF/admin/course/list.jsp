@@ -88,10 +88,10 @@
 					<span class="input-group-addon">创建者</span> 
 					<select class="c-select" name="classId">
 						<option value="" selected>全部</option>
-						<c:forEach items="${requestScope.clazzs}" var="clazz">
-							<option value="${clazz.id}" 
-									<c:if test="${param.classId == clazz.id}">selected="selected"</c:if>
-							>${clazz.name}</option>
+						<c:forEach items="${requestScope.users}" var="user">
+							<option value="${user.id}" 
+									<c:if test="${param.classId == user.id}">selected="selected"</c:if>
+							>${user.name}</option>
 						</c:forEach>
 					</select> 
 				</div>
@@ -100,17 +100,17 @@
 					<span class="input-group-addon">分类</span> 
 					<select class="c-select" name="classId">
 						<option value="" selected>全部</option>
-						<c:forEach items="${requestScope.clazzs}" var="clazz">
-							<option value="${clazz.id}" 
-									<c:if test="${param.classId == clazz.id}">selected="selected"</c:if>
-							>${clazz.name}</option>
+						<c:forEach items="${requestScope.types}" var="type">
+							<option value="${type.id}" 
+									<c:if test="${param.classId == type.id}">selected="selected"</c:if>
+							>${type.name}</option>
 						</c:forEach>
 					</select> 
 				</div>
 				&nbsp;&nbsp;
-				<div class="input-group" style="width: 50%;">
+				<div class="input-group">
 					<span class="input-group-addon">课程</span> 
-					<input type="text" class="form-control" placeholder="课程匹配" name="username" value="${param.username}"> 
+					<input type="text" class="form-control" placeholder="课程匹配"  value="${param.username}" > 
 					<span class="input-group-btn">
 						<button type="submit" class="btn btn-secondary">搜&nbsp;索</button>
 					</span>
