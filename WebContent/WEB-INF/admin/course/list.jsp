@@ -55,7 +55,7 @@
 	<script type="text/javascript">
 		
 		function toView (id){
-			window.open('http://www.hao123.com','_blank')
+			window.open('<%=basePath%>/mycourse/view?id=' + id,'_blank');
 		}
 	
 	</script>

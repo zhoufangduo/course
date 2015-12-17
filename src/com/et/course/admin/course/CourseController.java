@@ -2,7 +2,6 @@ package com.et.course.admin.course;
 
 import java.util.List;
 
-import org.apache.commons.lang3.StringUtils;
 
 import com.et.course.admin.clazz.Clazz;
 import com.et.course.admin.user.User;
@@ -21,12 +20,5 @@ public class CourseController extends BasicController{
 		
 		this.setAttr("list", list);
 		render("list.jsp");
-	}
-	
-	public void view(){
-		String id = getPara("id");
-		if (StringUtils.isNotEmpty(id)) {
-			Course.me.selectOne("", id);
-		}
 	}
 }
