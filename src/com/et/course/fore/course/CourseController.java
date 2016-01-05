@@ -12,6 +12,10 @@ public class CourseController extends BasicController{
 		render("index.jsp");
 	}
 	
+	public void toAdd(){
+		render("add.jsp");
+	}
+	
 	public void view(){
 		String id = getPara("id");
 		if (StringUtils.isNotEmpty(id)) {

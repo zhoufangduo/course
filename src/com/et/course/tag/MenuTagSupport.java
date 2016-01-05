@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.BodyTagSupport;
 
+
 import com.et.course.admin.user.User;
 import com.et.course.constant.CONSTANT;
 
@@ -24,10 +25,10 @@ public class MenuTagSupport extends BodyTagSupport {
 		this.contextPath = ((HttpServletRequest)this.pageContext.getRequest())
 				.getContextPath();
 		
-		init();
-		
 		HttpSession session = this.pageContext.getSession();
 		User user = (User)session.getAttribute(CONSTANT.USER);
+		
+		init(user);
 		
 		if(user == null){
 			buffer.append("<span style='margin-left: 70px;'>");
@@ -55,6 +56,7 @@ public class MenuTagSupport extends BodyTagSupport {
 			
 			buffer.append("<a class='message' href='#'><span class='fa fa-bell fa-lg'>")
 				  .append("</span>&nbsp;消息 </a>");
+			
 		}
 		
 		buffer.append("</form></nav>");
@@ -72,10 +74,7 @@ public class MenuTagSupport extends BodyTagSupport {
 		}
 	}
 
-	private void init() {
-		
-		
-		
+	private void init(User user) {
 		buffer.append("<nav class='navbar navbar-fixed-top navbar-dark bg-inverse'>");
 		buffer.append("<a class='navbar-brand' href='").append(contextPath).append("'>");
 		buffer.append("<img class='logo' src='").append(contextPath).append("/resource/images/easytopLOGO.png'/></a>");
@@ -89,6 +88,15 @@ public class MenuTagSupport extends BodyTagSupport {
 		buffer.append("</ul>");
 		
 		buffer.append("<form class='form-inline navbar-form pull-right' action=''>");
+		
+		if (user != null && !"STUDENT".equals(user.getRole()) 
+				&& user.getRole() != null 
+				&& !user.getRole().equals("")) {
+			
+			buffer.append("<a class='btn btn-primary' href='");
+			buffer.append(this.contextPath).append("/mycourse/toAdd' target='_blank'>创建课程</a>&nbsp;&nbsp;&nbsp;");
+		}
+		
 		buffer.append("<input class='form-control' type='text' placeholder='搜索内容'>&nbsp;");
 		buffer.append("<button class='btn btn-info-outline' type='submit'>搜&nbsp;索</button>");
 	}
