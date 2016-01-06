@@ -14,13 +14,39 @@
 	<link rel="stylesheet" href="<%=basePath%>/resource/css/all.css">
 	<script src="<%=basePath%>/resource/jquery/jquery.min.js"></script>
 	<script src="<%=basePath%>/resource/bootstrap/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		
+		body{
+			background: #eee;
+		}
+		
+	</style>
 </head>
 <body>
 	<div>
 	    <course:menu/>
 	</div>
 	<div class="body-container">
-		
+		<center>
+			<div class="panel" style="width: 600px;height: 290px;">
+			  <h3 style="margin: 10px;">课程名称</h3>
+			  <br/><p/>
+			  <form style="width: 80%;">
+				  <div class="form-group row">
+				    <label class="col-sm-2 form-control-label">名称</label>
+				    <div class="col-sm-10">
+				      <input type="text" class="form-control" placeholder="课程名称">
+				    </div>
+				  </div>
+				  <br/>
+				  <div class="form-group row">
+				    <div class="col-sm-offset-2 col-sm-10" >
+				      <button type="submit" style="float: right;" class="btn btn-primary btn-lg">&nbsp;创&nbsp;建&nbsp;</button>
+				    </div>
+				  </div>
+			   </form>
+			</div>
+		</center>
 	</div>
 </body>
 </html>
