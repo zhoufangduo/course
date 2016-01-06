@@ -53,8 +53,18 @@
 				return value;  
 			}  
 			
-			$("#username").val(getCookie('username'));
-			$("#password").val(getCookie('password'));
+			var userVal = getCookie('username');
+			var pwdVal = getCookie('password');
+			if(userVal == '""'){
+				userVal = '';
+			}
+			
+			if(pwdVal == '""'){
+				pwdVal = '';
+			}
+			
+			$("#username").val(userVal);
+			$("#password").val(pwdVal);
 			$("#remeber").attr("checked",getCookie('remeber'));
 			$("#username").focus();
 			

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <% String basePath = request.getContextPath();%>
 <%@ taglib prefix="course" uri="/WEB-INF/menu.tld"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -80,6 +81,11 @@
 			  <li class="nav-item">
 			    <a href="#div3" class="nav-link" role="tab" data-toggle="tab">已学完</a>
 			  </li>
+			  <c:if test="${SESSION_USER.role != 'STUDENT'}">
+			  	<li class="nav-item">
+			    	<a href="#div4" class="nav-link" role="tab" data-toggle="tab">我创建</a>
+			  	</li>
+			  </c:if>
 			</ul>
 		</div>
 		<p><br/>
@@ -241,6 +247,12 @@
 			  <div role="tabpanel" class="tab-pane" id="div3">
 			  	   <div class="alert alert-info" role="alert">
 					  <strong>提示!</strong>目前没有学完的课程
+				   </div>
+			  </div>
+			  
+			  <div role="tabpanel" class="tab-pane" id="div4">
+			  	   <div class="alert alert-info" role="alert">
+					  <strong>提示!</strong>目前没有创建的课程
 				   </div>
 			  </div>
 		    </div>

@@ -13,14 +13,35 @@
 	<link rel="stylesheet" href="<%=basePath%>/resource/bootstrap/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="<%=basePath%>/resource/css/all.css">
 	<script src="<%=basePath%>/resource/jquery/jquery.min.js"></script>
+	<script type="text/javascript"  src="<%=basePath%>/resource/validate/jquery.validate.min.js"></script>
+	<script type="text/javascript"  src="<%=basePath%>/resource/validate/messages_zh.min.js"></script>
 	<script src="<%=basePath%>/resource/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript"  src="<%=basePath%>/resource/validate/validate_error.js"></script>
 	<style type="text/css">
-		
 		body{
 			background: #eee;
 		}
-		
 	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("#addCourse").validate({
+				success:success,
+				ignore: "",
+				errorPlacement: showErrorPlacement,
+				rules: {
+					  name:{
+						  required:true
+					  }
+				}, 
+				messages:{
+					password:{required:"课程名称是必填项"}
+				},
+				submitHandler:function(form){
+		            form.submit();
+		        }    
+			}); 
+		});
+	</script>
 </head>
 <body>
 	<div>
@@ -31,11 +52,11 @@
 			<div class="panel" style="width: 600px;height: 290px;">
 			  <h3 style="margin: 10px;">课程名称</h3>
 			  <br/><p/>
-			  <form style="width: 80%;">
+			  <form style="width: 80%;" id="addCourse">
 				  <div class="form-group row">
 				    <label class="col-sm-2 form-control-label">名称</label>
 				    <div class="col-sm-10">
-				      <input type="text" class="form-control" placeholder="课程名称">
+				      <input type="text" name="name" class="form-control" placeholder="课程名称">
 				    </div>
 				  </div>
 				  <br/>

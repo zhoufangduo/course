@@ -61,5 +61,5 @@
 <div class="copyright">
 	Powered by Easytopit v1.0.0 ©2014-2016
 	<br/>
-	课程内容版权均归  深圳易通教育开发股份有限公司  所有 
+	课程内容版权均归  深圳易通教育有限公司  所有 
 </div>
