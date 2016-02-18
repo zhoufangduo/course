@@ -39,6 +39,17 @@
 				</c:otherwise>
 			</c:choose>
 		</li>
+		
+		<li class="nav-item">
+			<c:choose>
+				<c:when test="${param.context == 'true'}">
+					<a class="nav-link active" href="<%=basePath%>/admin/context/index?context=true">内容管理</a>
+				</c:when>
+				<c:otherwise>
+					<a class="nav-link" href="<%=basePath%>/admin/context/index?context=true">内容管理</a>
+				</c:otherwise>
+			</c:choose>
+		</li>
 	</ul>
 	<form class="form-inline navbar-form pull-right">
 		<a class="btn btn-info-outline" href="<%=basePath%>">首页</a>
