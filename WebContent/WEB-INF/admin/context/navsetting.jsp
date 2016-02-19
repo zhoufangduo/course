@@ -19,9 +19,9 @@
 	<jsp:include page="../menu.jsp"></jsp:include>
 	<div class="body-container">
 		<br />
-		<div style="width:200px;margin-left: 150px;position:fixed;margin-top: 150px;">
+		<%-- <div style="width:200px;margin-left: 150px;position:fixed;margin-top: 150px;">
 			<jsp:include page="menu.jsp"></jsp:include>
-		</div>
+		</div> --%>
 		<div class="container" style="border: solid 1px red;">
 			
 		</div>

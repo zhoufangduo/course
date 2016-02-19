@@ -40,15 +40,21 @@
 			</c:choose>
 		</li>
 		
-		<li class="nav-item">
+		<li class="nav-item dropdown">
 			<c:choose>
 				<c:when test="${param.context == 'true'}">
-					<a class="nav-link active" href="<%=basePath%>/admin/context/index?context=true">内容管理</a>
+					<a class="nav-link active dropdown-toggle" data-toggle="dropdown">内容管理</a>
 				</c:when>
 				<c:otherwise>
-					<a class="nav-link" href="<%=basePath%>/admin/context/index?context=true">内容管理</a>
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown">内容管理</a>
 				</c:otherwise>
 			</c:choose>
+			<div class="dropdown-menu">
+		      <a class="dropdown-item" href="<%=basePath%>/admin/context/index?context=true">导航栏菜单</a>
+		      <a class="dropdown-item" href="<%=basePath%>/admin/context">滚动图片</a>
+		      <a class="dropdown-item" href="<%=basePath%>/admin/context">推荐课程</a>
+		      <a class="dropdown-item" href="<%=basePath%>/admin/context">推荐老师</a>
+		    </div>
 		</li>
 	</ul>
 	<form class="form-inline navbar-form pull-right">
