@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Login">
+	<select id="getLoginUser" parameterType="Map" resultType="User">
+		SELECT * FROM USER WHERE (USERNAME = #{username} OR EMAIL = #{username}) AND PASSWORD=MD5(#{password})
+	</select>
+	
+	<select id="getAdmin" parameterType="Map" resultType="Admin">
+		SELECT USERNAME FROM USER WHERE USERNAME = #{username} AND PASSWORD=MD5(#{password})
+	</select>
+</mapper>

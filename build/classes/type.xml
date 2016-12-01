@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Type">
+	
+	<select id="list" resultType="Type">
+		SELECT t.`ID`,t.`NAME`,t.`CREATETIME`,t.`DESCRIPTION`,u.`NAME` AS `CREATER`FROM COURSE_TYPE t LEFT OUTER JOIN
+		`USER` u ON u.ID = t.CREATER
+	</select>
+	
+	<insert id="add" parameterType="map">
+		INSERT INTO COURSE_TYPE(`NAME`,`CREATETIME`,`CREATER`,`DESCRIPTION`)
+		 VALUES(#{name},CURDATE(),#{creator},#{description})
+	</insert>
+	
+	<delete id="deleteById" parameterType="String">
+		DELETE FROM COURSE_TYPE WHERE ID = #{id}
+	</delete>
+</mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Course">
+	<insert id="add" parameterType="Map">
+		INSERT INTO COURSES(`NAME`,`CREATETIME`,`CREATER`,`DESCRIPTION`,`AUDIENCES`)
+		VALUES(#{name},CURDATE(),#{creater},#{description},#{audiences})
+	</insert>
+	
+	<select id="list" parameterType="map" resultType="Course">
+		SELECT * FROM COURSES
+	</select>
+	
+	<select id="view" parameterType="String" resultType="Course">
+		SELECT * FROM COURSES WHERE ID = #{value}
+	</select>
+	
+</mapper>

@@ -172,12 +172,12 @@
 			<div class="row">
 				<div class="col-md-3">
 					<div class="teacher-item">
-					  <img src="<%=basePath%>/resource/images/zhao.jpg" class="img-circle">
+					  <img src="<%=basePath%>/resource/images/yang.jpg" class="img-circle">
 					  <div class="card-block">
 					    <p class="card-text">
-					    	<span class="name">潘老师</span>
+					    	<span class="name">杨老师</span>
 					    	<br/>
-					    	<label class="job">老板</label>
+					    	<label class="job">副校长</label>
 					    	<br/><br/>
 					    	<label class="ins">
 					    		主要负责好知网的运营工作。 英国卡迪夫大学新闻学硕士，原浙江...
@@ -188,12 +188,12 @@
           		</div>
           		<div class="col-md-3">
            			<div class="teacher-item">
-					  <img src="<%=basePath%>/resource/images/zhao.jpg" class="img-circle">
+					  <img src="<%=basePath%>/resource/images/pan.jpg" class="img-circle">
 					  <div class="card-block" >
 					    <p class="card-text">
 					    	<span class="name">潘老师</span>
 					    	<br/>
-					    	<label class="job">老板</label>
+					    	<label class="job">高级讲师</label>
 					    	<br/><br/>
 					    	<label class="ins">
 					    		主要负责好知网的运营工作。 英国卡迪夫大学新闻学硕士，原浙江...
@@ -204,12 +204,12 @@
           		</div>
           		<div class="col-md-3">
            			<div class="teacher-item">
-					  <img src="<%=basePath%>/resource/images/zhao.jpg" class="img-circle">
+					  <img src="<%=basePath%>/resource/images/long.jpg" class="img-circle">
 					  <div class="card-block" >
 					    <p class="card-text">
-					    	<span class="name">潘老师</span>
+					    	<span class="name">龙老师</span>
 					    	<br/>
-					    	<label class="job">老板</label>
+					    	<label class="job">初级讲师</label>
 					    	<br/><br/>
 					    	<label class="ins">
 					    		主要负责好知网的运营工作。 英国卡迪夫大学新闻学硕士，原浙江...
@@ -220,12 +220,12 @@
           		</div>
           		<div class="col-md-3">
            			<div class="teacher-item">
-					  <img src="<%=basePath%>/resource/images/zhao.jpg" class="img-circle">
+					  <img src="<%=basePath%>/resource/images/zhou.png" class="img-circle">
 					  <div class="card-block">
 					    <p class="card-text">
-					    	<span class="name">潘老师</span>
+					    	<span class="name">周老师</span>
 					    	<br/>
-					    	<label class="job">老板</label>
+					    	<label class="job">高级讲师</label>
 					    	<br/><br/>
 					    	<label class="ins">
 					    		主要负责好知网的运营工作。 英国卡迪夫大学新闻学硕士，原浙江...
